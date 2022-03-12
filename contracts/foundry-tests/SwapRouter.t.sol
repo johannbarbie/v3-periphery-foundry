@@ -8,7 +8,7 @@ import './utils/Path.sol';
 
 import '../interfaces/INonfungiblePositionManager.sol';
 import '../interfaces/ISwapRouter.sol';
-import "../libraries/PoolAddress.sol";
+import '../libraries/PoolAddress.sol';
 
 import '@uniswap/v3-core/contracts/libraries/TickMath.sol';
 
@@ -150,7 +150,6 @@ contract MultiPool is ExactInput {
         Balances memory traderAfter = getBalances(trader);
         require(traderAfter.token0 == traderBefore.token0 - 5);
         require(traderAfter.token2 == traderBefore.token2 + 1);
-
     }
 
     function testTwoToOneToZero() public {
@@ -168,6 +167,7 @@ contract MultiPool is ExactInput {
     }
 
     event Transfer(address indexed from, address indexed to, uint256 amount);
+
     function testEvents() public {
         address[] memory _tokens = new address[](3);
         _tokens[0] = address(tokens[0]);
@@ -184,7 +184,7 @@ contract MultiPool is ExactInput {
         // 4. Router -> Pool1
 
         vm.expectEmit(true, true, true, true);
-        key  = PoolAddress.PoolKey(address(tokens[1]), address(tokens[0]), FEE_MEDIUM);
+        key = PoolAddress.PoolKey(address(tokens[1]), address(tokens[0]), FEE_MEDIUM);
         addr = PoolAddress.computeAddress(address(factory), key);
         emit Transfer(addr, address(router), 3);
 

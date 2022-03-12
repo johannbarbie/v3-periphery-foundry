@@ -2,7 +2,13 @@ pragma solidity ^0.7.6;
 
 // TODO: Replace with forge-std.
 interface Vm {
-    function expectEmit(bool,bool,bool,bool) external;
+    function expectEmit(
+        bool,
+        bool,
+        bool,
+        bool
+    ) external;
+
     function expectRevert(bytes memory) external;
 
     function prank(address) external;
