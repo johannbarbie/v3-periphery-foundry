@@ -12,14 +12,15 @@ repository.
 
 This repository has been modified to also support Foundry Solidity tests
 
-If you already have Foundry's `forge` installed, first install the dependencies with `yarn`, and then simply 
-run `forge test` to run the Solidity tests  under `contracts/foundry-tests`.
+If you already have Foundry's `forge` installed, first install the dependencies with `yarn`, and then simply
+run `forge test` to run the Solidity tests under `contracts/foundry-tests`.
 
 ### Installing Foundry
 
 See the official Foundry installation [instructions](https://github.com/gakonst/foundry/blob/master/README.md#installation).
 
 Then, install the [foundry](https://github.com/gakonst/foundry) toolchain installer (`foundryup`) with:
+
 ```bash
 curl -L https://foundry.paradigm.xyz | bash
 ```
@@ -29,6 +30,7 @@ anytime you need to get the latest `forge` or `cast` binaries,
 you can run `foundryup`.
 
 So, simply execute:
+
 ```bash
 foundryup
 ```
