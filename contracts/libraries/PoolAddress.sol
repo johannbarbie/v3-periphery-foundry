@@ -34,13 +34,15 @@ library PoolAddress {
         require(key.token0 < key.token1);
         unchecked {
             pool = address(
-                uint256(
-                    keccak256(
-                        abi.encodePacked(
-                            hex'ff',
-                            factory,
-                            keccak256(abi.encode(key.token0, key.token1, key.fee)),
-                            POOL_INIT_CODE_HASH
+                uint160(
+                    uint256(
+                        keccak256(
+                            abi.encodePacked(
+                                hex'ff',
+                                factory,
+                                keccak256(abi.encode(key.token0, key.token1, key.fee)),
+                                POOL_INIT_CODE_HASH
+                            )
                         )
                     )
                 )
